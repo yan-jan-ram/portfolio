@@ -13,7 +13,8 @@ import {
   FaChartPie,
   FaFileExcel,
   FaSun,
-  FaMoon
+  FaMoon,
+  FaExternalLinkAlt,
 } from 'react-icons/fa'
 
 import { MdEmail, MdPhone } from 'react-icons/md'
@@ -118,18 +119,58 @@ const experience = [
 const projects = [
   {
     title: 'Ride-it Analysis',
-    subtitle: 'Power BI · DAX · Excel · SQL',
+    // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
       'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
-    link: 'https://github.com/yan-jan-ram'
+    link: 'https://github.com/yan-jan-ram/Ride-it-analysis',
+    image: "/project images/Rides dashboard.png",
+    tech: ["Power BI", "DAX", "Excel", "SQL", "ETL",],
   },
   {
-    title: 'GDP Analysis',
-    subtitle: 'Python · NumPy · Pandas · Matplotlib · Seaborn',
+    title: 'Netflix dashboard',
+    // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'Analysed global economic indicators to uncover region-wise GDP trends and visualised correlations across countries.',
-    link: 'https://github.com/yan-jan-ram'
-  }
+      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+    link: 'https://github.com/yan-jan-ram/Netflix-BI',
+    image: "/project images/Netflix dashboard.png",
+    tech: ["Power BI", "DAX", "Excel",],
+  },
+  {
+    title: 'Bike sales analysis',
+    // subtitle: 'Power BI · DAX · Excel · SQL',
+    description:
+      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+    link: 'https://github.com/yan-jan-ram/Bike-Sales',
+    image: "/project images/bike sales dashboard.png",
+    tech: ["Tableau",],
+  },
+  {
+    title: 'EVL dashboard',
+    // subtitle: 'Power BI · DAX · Excel · SQL',
+    description:
+      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+    link: 'https://github.com/yan-jan-ram/EVL-data',
+    image: "/project images/evl dashboard.png",
+    tech: ["Tableau",],
+  },
+  {
+    title: 'Classic Models Purchase Analysis',
+    // subtitle: 'Power BI · DAX · Excel · SQL',
+    description:
+      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+    link: 'https://github.com/yan-jan-ram/Classic-Models-Purchase-Analysis',
+    image: "/project images/classic models dashboard.png",
+    tech: ["Power BI", "DAX", "Excel", "SQL",],
+  },
+  {
+    title: 'Superstore sales dashboard',
+    // subtitle: 'Power BI · DAX · Excel · SQL',
+    description:
+      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+    link: 'https://github.com/yan-jan-ram/Superstore-sales-dashboard',
+    image: "/project images/superstore dashboard.png",
+    tech: ["Power BI", "DAX",],
+  },
 ]
 
 const achievements = [
@@ -350,24 +391,74 @@ export default function App () {
               ))}
             </Section>
 
-            <Section id='projects' title='Projects'>
-              {projects.map(proj => (
-                <div
-                  key={proj.title}
-                  className='border border-slate-300 dark:border-slate-800 p-4 rounded-lg bg-white dark:bg-slate-900'
+           <Section id="projects" title="Projects">
+  <div className="space-y-6">
+    {projects.map((proj) => (
+      <div
+        key={proj.title}
+        className="border border-slate-300 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4"
+      >
+        {/* Thumbnail */}
+        {proj.image && (
+          <div className="w-full sm:w-52 flex-shrink-0">
+            <img
+              src={proj.image}
+              alt={proj.title}
+              className="w-full h-full object-cover rounded-xl border border-slate-200 dark:border-slate-700"
+            />
+          </div>
+        )}
+
+        {/* Text content */}
+        <div className="flex-1 flex flex-col gap-2">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <h3 className="font-semibold text-base sm:text-lg text-slate-900 dark:text-slate-100">
+                {proj.title}
+              </h3>
+              {proj.subtitle && (
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                  {proj.subtitle}
+                </p>
+              )}
+            </div>
+
+            {proj.link && (
+              <a
+                href={proj.link}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 rounded-full border border-slate-300 dark:border-slate-700 px-3 py-1 text-[11px] sm:text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+              >
+                <FaExternalLinkAlt size={10} />
+                <span>Open</span>
+              </a>
+            )}
+          </div>
+
+          <p className="text-sm text-slate-700 dark:text-slate-200 mt-1">
+            {proj.description}
+          </p>
+
+          {/* Tech tags */}
+          {proj.tech && (
+            <div className="flex flex-wrap gap-2 mt-3">
+              {proj.tech.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 rounded-full text-xs bg-indigo-100 text-indigo-700 dark:bg-indigo-600 dark:text-white"
                 >
-                  <h3 className='font-semibold'>{proj.title}</h3>
-                  <p className='text-sm text-slate-500'>{proj.subtitle}</p>
-                  <p className='mt-2'>{proj.description}</p>
-                  <a
-                    href={proj.link}
-                    className='text-indigo-500 hover:underline text-sm'
-                  >
-                    View on GitHub
-                  </a>
-                </div>
+                  {tag}
+                </span>
               ))}
-            </Section>
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>
+
 
             <Section id='achievements' title='Achievements'>
               <ul className='list-disc ml-5'>
