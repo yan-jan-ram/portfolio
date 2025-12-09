@@ -14,7 +14,7 @@ import {
   FaFileExcel,
   FaSun,
   FaMoon,
-  FaExternalLinkAlt,
+  FaExternalLinkAlt
 } from 'react-icons/fa'
 
 import { MdEmail, MdPhone } from 'react-icons/md'
@@ -51,16 +51,16 @@ const skillGroups = [
     title: 'Databases',
     items: [
       { label: 'MySQL', icon: SiMysql },
-      // { label: "MS SQL Server", icon: FaDatabase },
       { label: 'Oracle SQL', icon: FaDatabase }
     ]
   },
   {
-    title: 'Cloud & ETL',
-    items: [
-      { label: 'Azure', icon: FaCloud },
-      { label: 'Github', icon: FaGithub }
-    ]
+    title: 'Cloud & ETL (ADF, ADLS)',
+    items: [{ label: 'Azure', icon: FaCloud }]
+  },
+  {
+    title: 'Tools',
+    items: [{ label: 'GitHub', icon: FaGithub }]
   }
 ]
 
@@ -123,8 +123,8 @@ const projects = [
     description:
       'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
     link: 'https://github.com/yan-jan-ram/Ride-it-analysis',
-    image: "/project images/Rides dashboard.png",
-    tech: ["Power BI", "DAX", "Excel", "SQL", "ETL",],
+    image: '/project images/Rides dashboard.png',
+    tech: ['Power BI', 'DAX', 'Excel', 'SQL', 'ETL']
   },
   {
     title: 'Netflix dashboard',
@@ -132,8 +132,8 @@ const projects = [
     description:
       'A Power BI dashboard analyzing Netflix’s global content catalog, focusing on content type, genre, ratings, and regional distribution. Highlights trends in content additions and global release patterns.',
     link: 'https://github.com/yan-jan-ram/Netflix-BI',
-    image: "/project images/Netflix dashboard.png",
-    tech: ["Power BI", "DAX", "Excel",],
+    image: '/project images/Netflix dashboard.png',
+    tech: ['Power BI', 'DAX', 'Excel']
   },
   {
     title: 'Bike sales analysis',
@@ -141,8 +141,10 @@ const projects = [
     description:
       'An interactive Tableau dashboard analyzing global bike sales performance across products, customer segments, age groups, and regions. Includes KPIs for revenue, profit, YoY growth, and breakdowns such as top-selling products, sales by gender, and country-level performance.',
     link: 'https://github.com/yan-jan-ram/Bike-Sales',
-    image: "/project images/bike sales dashboard.png",
-    tech: ["Tableau",],
+    liveLink:
+      'https://public.tableau.com/app/profile/yandapalli.janakiram/viz/Bikessales_17365258538140/SalesDashboard',
+    image: '/project images/bike sales dashboard.png',
+    tech: ['Tableau', 'data visualization', 'sales analytics']
   },
   {
     title: 'EVL dashboard',
@@ -150,8 +152,10 @@ const projects = [
     description:
       'A Tableau dashboard analyzing Electric Vehicle (EV) distribution across Washington State. It provides breakdowns by make, model, vehicle type, county, and registered ZIP codes.',
     link: 'https://github.com/yan-jan-ram/EVL-data',
-    image: "/project images/evl dashboard.png",
-    tech: ["Tableau",],
+    liveLink:
+      'https://public.tableau.com/app/profile/yandapalli.janakiram/viz/EVLdata/EVPopulationdata',
+    image: '/project images/evl dashboard.png',
+    tech: ['Tableau', 'data visualization']
   },
   {
     title: 'Classic Models Purchase Analysis',
@@ -159,8 +163,8 @@ const projects = [
     description:
       'A comprehensive Power BI dashboard for analyzing sales of Classic Models across product lines, countries, and offices. Includes sales vs cost analysis, trends, order patterns, and customer distribution.',
     link: 'https://github.com/yan-jan-ram/Classic-Models-Purchase-Analysis',
-    image: "/project images/classic models dashboard.png",
-    tech: ["Power BI", "DAX", "Excel", "SQL",],
+    image: '/project images/classic models dashboard.png',
+    tech: ['Power BI', 'DAX', 'Excel', 'SQL']
   },
   {
     title: 'Superstore sales dashboard',
@@ -168,9 +172,9 @@ const projects = [
     description:
       'A Power BI dashboard analyzing Superstore dataset performance across sales, profit, categories, and geographies. Includes interactive filtering and deep-dive product analysis.',
     link: 'https://github.com/yan-jan-ram/Superstore-sales-dashboard',
-    image: "/project images/superstore dashboard.png",
-    tech: ["Power BI", "DAX",],
-  },
+    image: '/project images/superstore dashboard.png',
+    tech: ['Power BI', 'DAX', 'sales analytics']
+  }
 ]
 
 const achievements = [
@@ -190,7 +194,7 @@ function Section ({ id, title, children }) {
 // eslint-disable-next-line no-unused-vars
 function SkillCard ({ icon: Icon, label }) {
   return (
-    <div className='flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700'>
+    <div className='flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-indigo-400/70 dark:hover:border-indigo-400/70 transition-transform'>
       <Icon size={26} className='text-indigo-500 dark:text-indigo-300' />
       <p className='text-xs sm:text-sm text-slate-800 dark:text-slate-200'>
         {label}
@@ -204,11 +208,21 @@ export default function App () {
 
   return (
     <div className={dark ? 'dark' : ''}>
-      <div className='min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100'>
+      <div className='min-h-screen bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50 text-slate-900 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100'>
         <div className='max-w-5xl mx-auto px-4 sm:px-6 py-10 flex flex-col lg:flex-row gap-8'>
           {/* LEFT PANEL */}
           <aside className='lg:w-1/3 lg:sticky lg:top-6 space-y-6'>
             <div className='space-y-2'>
+              <div className='flex items-center gap-4'>
+                <div className='w-28 h-28 rounded-full overflow-hidden border border-slate-300 dark:border-slate-700 shadow-md'>
+                  <img
+                    src='/profile pic.jpg'
+                    alt='Profile'
+                    className='w-full h-full object-cover'
+                  />
+                </div>
+              </div>
+
               <h1 className='text-3xl sm:text-4xl font-bold'>
                 Yandapalli Janakiram
               </h1>
@@ -282,7 +296,9 @@ export default function App () {
                 <FaLinkedin size={18} />
               </a>
               <a
-                href='mailto:yandapallijanakiram@gmail.com'
+                href='https://mail.google.com/mail/?view=cm&fs=1&to=yandapallijanakiram@gmail.com'
+                target='_blank'
+                rel='noopener noreferrer'
                 className='w-9 h-9 border border-slate-400 dark:border-slate-700 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800'
               >
                 <MdEmail size={18} />
@@ -300,13 +316,20 @@ export default function App () {
           <main className='lg:w-2/3 space-y-12'>
             <Section id='about' title='About Me'>
               <p>
-                Data Analyst with 2+ years of experience in building interactive
-                dashboards, developing ETL workflows, and optimizing data
-                models. Skilled in Power BI, Tableau, SQL, and Python.
+                Data Analyst with 2+ years of experience designing interactive
+                Power BI dashboards, building SQL/Python data pipelines, and
+                improving reporting workflows for global enterprise clients at
+                Infosys (GSK and Johnson & Johnson). I enjoy turning messy,
+                scattered data into clear, reliable insights that stakeholders
+                can act on.
               </p>
               <p className='mt-3'>
-                Strong track record of collaborating with global teams to drive
-                operational efficiency and support data-driven decisions.
+                My work spans the full analytics lifecycle — from data ingestion
+                and validation, through modelling and DAX measures, to
+                delivering polished reports that reduce manual effort and
+                support faster decisions. I’m particularly interested in sales,
+                operations, and finance reporting, where good dashboards
+                directly impact business performance.
               </p>
             </Section>
 
@@ -333,7 +356,10 @@ export default function App () {
                     'DAX',
                     'Data Modelling',
                     'ETL Workflows',
-                    'Data Quality & Validation'
+                    'Data Quality & Validation',
+                    'Dashboard Design',
+                    'Stakeholder Reporting',
+                    'Sales & Operations Analytics'
                   ].map(tag => (
                     <span
                       key={tag}
@@ -350,7 +376,7 @@ export default function App () {
               {education.map(edu => (
                 <div
                   key={edu.degree}
-                  className='border border-slate-300 dark:border-slate-800 p-4 rounded-lg bg-white dark:bg-slate-900'
+                  className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
                 >
                   <h3 className='font-semibold'>{edu.degree}</h3>
                   <p className='text-sm text-slate-500'>{edu.institution}</p>
@@ -363,7 +389,7 @@ export default function App () {
               {experience.map(exp => (
                 <div
                   key={exp.role}
-                  className='border border-slate-300 dark:border-slate-800 p-4 rounded-lg bg-white dark:bg-slate-900'
+                  className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
                 >
                   <h3 className='font-semibold'>{exp.role}</h3>
                   <p className='text-sm text-slate-500'>
@@ -391,74 +417,96 @@ export default function App () {
               ))}
             </Section>
 
-           <Section id="projects" title="Projects">
-  <div className="space-y-6">
-    {projects.map((proj) => (
-      <div
-        key={proj.title}
-        className="border border-slate-300 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4"
-      >
-        {/* Thumbnail */}
-        {proj.image && (
-          <div className="w-full sm:w-52 flex-shrink-0">
-            <img
-              src={proj.image}
-              alt={proj.title}
-              className="w-full h-full object-cover rounded-xl border border-slate-200 dark:border-slate-700"
-            />
-          </div>
-        )}
+            <Section id='projects' title='Projects'>
+              <div className='space-y-6'>
+                {projects.map(proj => (
+                  <div
+                    key={proj.title}
+                    className='border border-slate-300 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 hover:shadow-md hover:-translate-y-1 transition-transform'
+                  >
+                    {/* Thumbnail */}
+                    {proj.image && (
+                      <div className='w-full sm:w-52 flex-shrink-0'>
+                        <img
+                          src={proj.image}
+                          alt={proj.title}
+                          className='w-full h-full object-cover rounded-xl border border-slate-200 dark:border-slate-700'
+                        />
+                      </div>
+                    )}
 
-        {/* Text content */}
-        <div className="flex-1 flex flex-col gap-2">
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <h3 className="font-semibold text-base sm:text-lg text-slate-900 dark:text-slate-100">
-                {proj.title}
-              </h3>
-              {proj.subtitle && (
-                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                  {proj.subtitle}
-                </p>
-              )}
-            </div>
+                    {/* Text content */}
+                    <div className='flex-1 flex flex-col gap-2'>
+                      <div className='flex items-start justify-between gap-3'>
+                        <div>
+                          <h3 className='font-semibold text-base sm:text-lg text-slate-900 dark:text-slate-100'>
+                            {proj.title}
+                          </h3>
+                          {/* LIVE badge */}
+                          {proj.liveLink && (
+                            <span className='flex items-center gap-1 text-green-500 text-xs sm:text-sm font-semibold'>
+                              <span className='inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse'></span>
+                              LIVE
+                            </span>
+                          )}
+                          {proj.subtitle && (
+                            <p className='text-xs sm:text-sm text-slate-500 dark:text-slate-400'>
+                              {proj.subtitle}
+                            </p>
+                          )}
+                        </div>
 
-            {proj.link && (
-              <a
-                href={proj.link}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 rounded-full border border-slate-300 dark:border-slate-700 px-3 py-1 text-[11px] sm:text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
-              >
-                <FaExternalLinkAlt size={10} />
-                <span>Open</span>
-              </a>
-            )}
-          </div>
+                        {(proj.link || proj.liveLink) && (
+                          <div className='flex flex-col items-end gap-2'>
+                            {proj.link && (
+                              <a
+                                href={proj.link}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='inline-flex items-center gap-1 rounded-full border border-slate-300 dark:border-slate-700 px-3 py-1 text-[11px] sm:text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                              >
+                                <FaExternalLinkAlt size={10} />
+                                <span>GitHub</span>
+                              </a>
+                            )}
 
-          <p className="text-sm text-slate-700 dark:text-slate-200 mt-1">
-            {proj.description}
-          </p>
+                            {proj.liveLink && (
+                              <a
+                                href={proj.liveLink}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='inline-flex items-center gap-1 rounded-full border border-emerald-400/80 px-3 py-1 text-[11px] sm:text-xs text-emerald-600 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30'
+                              >
+                                <FaExternalLinkAlt size={10} />
+                                <span>Live Dashboard</span>
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
 
-          {/* Tech tags */}
-          {proj.tech && (
-            <div className="flex flex-wrap gap-2 mt-3">
-              {proj.tech.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 rounded-full text-xs bg-indigo-100 text-indigo-700 dark:bg-indigo-600 dark:text-white"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    ))}
-  </div>
-</Section>
+                      <p className='text-sm text-slate-700 dark:text-slate-200 mt-1'>
+                        {proj.description}
+                      </p>
 
+                      {/* Tech tags */}
+                      {proj.tech && (
+                        <div className='flex flex-wrap gap-2 mt-3'>
+                          {proj.tech.map(tag => (
+                            <span
+                              key={tag}
+                              className='px-3 py-1 rounded-full text-xs bg-indigo-100 text-indigo-700 dark:bg-indigo-600 dark:text-white'
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Section>
 
             <Section id='achievements' title='Achievements'>
               <ul className='list-disc ml-5'>
@@ -475,7 +523,9 @@ export default function App () {
 
               <div className='flex gap-3 text-sm'>
                 <a
-                  href='mailto:yandapallijanakiram@gmail.com'
+                  href='https://mail.google.com/mail/?view=cm&fs=1&to=yandapallijanakiram@gmail.com'
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='border border-indigo-500 px-4 py-1.5 rounded-full'
                 >
                   <MdEmail size={18} className='inline mr-2' />
