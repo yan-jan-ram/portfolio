@@ -130,7 +130,7 @@ const projects = [
     title: 'Netflix dashboard',
     // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+      'A Power BI dashboard analyzing Netflix’s global content catalog, focusing on content type, genre, ratings, and regional distribution. Highlights trends in content additions and global release patterns.',
     link: 'https://github.com/yan-jan-ram/Netflix-BI',
     image: "/project images/Netflix dashboard.png",
     tech: ["Power BI", "DAX", "Excel",],
@@ -139,7 +139,7 @@ const projects = [
     title: 'Bike sales analysis',
     // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+      'An interactive Tableau dashboard analyzing global bike sales performance across products, customer segments, age groups, and regions. Includes KPIs for revenue, profit, YoY growth, and breakdowns such as top-selling products, sales by gender, and country-level performance.',
     link: 'https://github.com/yan-jan-ram/Bike-Sales',
     image: "/project images/bike sales dashboard.png",
     tech: ["Tableau",],
@@ -148,7 +148,7 @@ const projects = [
     title: 'EVL dashboard',
     // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+      'A Tableau dashboard analyzing Electric Vehicle (EV) distribution across Washington State. It provides breakdowns by make, model, vehicle type, county, and registered ZIP codes.',
     link: 'https://github.com/yan-jan-ram/EVL-data',
     image: "/project images/evl dashboard.png",
     tech: ["Tableau",],
@@ -157,7 +157,7 @@ const projects = [
     title: 'Classic Models Purchase Analysis',
     // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+      'A comprehensive Power BI dashboard for analyzing sales of Classic Models across product lines, countries, and offices. Includes sales vs cost analysis, trends, order patterns, and customer distribution.',
     link: 'https://github.com/yan-jan-ram/Classic-Models-Purchase-Analysis',
     image: "/project images/classic models dashboard.png",
     tech: ["Power BI", "DAX", "Excel", "SQL",],
@@ -166,7 +166,7 @@ const projects = [
     title: 'Superstore sales dashboard',
     // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+      'A Power BI dashboard analyzing Superstore dataset performance across sales, profit, categories, and geographies. Includes interactive filtering and deep-dive product analysis.',
     link: 'https://github.com/yan-jan-ram/Superstore-sales-dashboard',
     image: "/project images/superstore dashboard.png",
     tech: ["Power BI", "DAX",],
