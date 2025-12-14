@@ -244,7 +244,7 @@ export default function App () {
 
                 <button
                   onClick={() => setDark(!dark)}
-                  className='border border-slate-400 dark:border-slate-600 px-3 py-1.5 rounded-full flex items-center gap-2'
+                  className='border border-indigo-500 px-4 py-1.5 rounded-full hover:bg-indigo-50 dark:hover:bg-indigo-500/10 rounded-full flex items-center gap-2'
                 >
                   {dark ? (
                     <>
@@ -296,7 +296,7 @@ export default function App () {
                 <FaLinkedin size={18} />
               </a>
               <a
-                href='https://mail.google.com/mail/?view=cm&fs=1&to=yandapallijanakiram@gmail.com'
+                href='mailto:yandapallijanakiram@gmail.com'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='w-9 h-9 border border-slate-400 dark:border-slate-700 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800'
@@ -373,48 +373,52 @@ export default function App () {
             </Section>
 
             <Section id='education' title='Education'>
-              {education.map(edu => (
-                <div
-                  key={edu.degree}
-                  className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
-                >
-                  <h3 className='font-semibold'>{edu.degree}</h3>
-                  <p className='text-sm text-slate-500'>{edu.institution}</p>
-                  <p className='text-sm text-slate-500'>{edu.period}</p>
-                </div>
-              ))}
+              <div className='space-y-6'>
+                {education.map(edu => (
+                  <div
+                    key={edu.degree}
+                    className='border border-slate-200 dark:border-indigo-500 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none hover-card'
+                  >
+                    <h3 className='font-semibold'>{edu.degree}</h3>
+                    <p className='text-sm text-slate-500'>{edu.institution}</p>
+                    <p className='text-sm text-slate-500'>{edu.period}</p>
+                  </div>
+                ))}
+              </div>
             </Section>
 
             <Section id='experience' title='Experience'>
-              {experience.map(exp => (
-                <div
-                  key={exp.role}
-                  className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
-                >
-                  <h3 className='font-semibold'>{exp.role}</h3>
-                  <p className='text-sm text-slate-500'>
-                    {exp.company} — {exp.location}
-                  </p>
-                  <p className='text-sm text-slate-500 mb-2'>{exp.period}</p>
+              <div className='space-y-6'>
+                {experience.map(exp => (
+                  <div
+                    key={exp.role}
+                    className='border border-slate-200 dark:border-indigo-500 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none hover-card'
+                  >
+                    <h3 className='font-semibold'>{exp.role}</h3>
+                    <p className='text-sm text-slate-500'>
+                      {exp.company} — {exp.location}
+                    </p>
+                    <p className='text-sm text-slate-500 mb-2'>{exp.period}</p>
 
-                  <ul className='list-disc ml-5 text-sm'>
-                    {exp.bullets.map(b => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
+                    <ul className='list-disc ml-5 text-sm'>
+                      {exp.bullets.map(b => (
+                        <li key={b}>{b}</li>
+                      ))}
+                    </ul>
 
-                  <div className='flex flex-wrap gap-2 mt-3 text-xs'>
-                    {exp.tags.map(tag => (
-                      <span
-                        key={tag}
-                        className='border border-slate-400 dark:border-slate-700 px-2 py-1 rounded-full'
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    <div className='flex flex-wrap gap-2 mt-3 text-xs'>
+                      {exp.tags.map(tag => (
+                        <span
+                          key={tag}
+                          className='border border-slate-400 dark:border-slate-700 px-2 py-1 rounded-full'
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </Section>
 
             <Section id='projects' title='Projects'>
@@ -422,7 +426,7 @@ export default function App () {
                 {projects.map(proj => (
                   <div
                     key={proj.title}
-                    className='border border-slate-300 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 hover:shadow-md hover:-translate-y-1 transition-transform'
+                    className='border border-slate-300 dark:border-indigo-500 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 hover:shadow-md hover:-translate-y-1 transition-transform'
                   >
                     {/* Thumbnail */}
                     {proj.image && (
@@ -526,14 +530,14 @@ export default function App () {
                   href='https://mail.google.com/mail/?view=cm&fs=1&to=yandapallijanakiram@gmail.com'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='border border-indigo-500 px-4 py-1.5 rounded-full'
+                  className='border border-indigo-500 px-4 py-1.5 rounded-full hover:bg-indigo-50 dark:hover:bg-indigo-500/10'
                 >
                   <MdEmail size={18} className='inline mr-2' />
                   Email Me
                 </a>
                 <a
                   href='https://www.linkedin.com/in/janaki-ram-yandapalli'
-                  className='border border-slate-400 dark:border-slate-700 px-4 py-1.5 rounded-full'
+                  className='border border-indigo-500 px-4 py-1.5 rounded-full hover:bg-indigo-50 dark:hover:bg-indigo-500/10'
                 >
                   <FaLinkedin size={18} className='inline mr-2' />
                   LinkedIn
