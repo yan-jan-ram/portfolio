@@ -127,13 +127,13 @@ const projects = [
     tech: ['Power BI', 'DAX', 'Excel', 'SQL', 'ETL']
   },
   {
-    title: 'Netflix dashboard',
+    title: 'Classic Models Purchase Analysis',
     // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'A Power BI dashboard analyzing Netflix’s global content catalog, focusing on content type, genre, ratings, and regional distribution. Highlights trends in content additions and global release patterns.',
-    link: 'https://github.com/yan-jan-ram/Netflix-BI',
-    image: '/project images/Netflix dashboard.png',
-    tech: ['Power BI', 'DAX', 'Excel']
+      'A comprehensive Power BI dashboard for analyzing sales of Classic Models across product lines, countries, and offices. Includes sales vs cost analysis, trends, order patterns, and customer distribution.',
+    link: 'https://github.com/yan-jan-ram/Classic-Models-Purchase-Analysis',
+    image: '/project images/classic models dashboard.png',
+    tech: ['Power BI', 'DAX', 'Excel', 'SQL']
   },
   {
     title: 'Bike sales analysis',
@@ -158,13 +158,13 @@ const projects = [
     tech: ['Tableau', 'data visualization']
   },
   {
-    title: 'Classic Models Purchase Analysis',
+    title: 'Netflix dashboard',
     // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'A comprehensive Power BI dashboard for analyzing sales of Classic Models across product lines, countries, and offices. Includes sales vs cost analysis, trends, order patterns, and customer distribution.',
-    link: 'https://github.com/yan-jan-ram/Classic-Models-Purchase-Analysis',
-    image: '/project images/classic models dashboard.png',
-    tech: ['Power BI', 'DAX', 'Excel', 'SQL']
+      'A Power BI dashboard analyzing Netflix’s global content catalog, focusing on content type, genre, ratings, and regional distribution. Highlights trends in content additions and global release patterns.',
+    link: 'https://github.com/yan-jan-ram/Netflix-BI',
+    image: '/project images/Netflix dashboard.png',
+    tech: ['Power BI', 'DAX', 'Excel']
   },
   {
     title: 'Superstore sales dashboard',
@@ -174,7 +174,7 @@ const projects = [
     link: 'https://github.com/yan-jan-ram/Superstore-sales-dashboard',
     image: '/project images/superstore dashboard.png',
     tech: ['Power BI', 'DAX', 'sales analytics']
-  }
+  },
 ]
 
 const achievements = [
@@ -244,7 +244,7 @@ export default function App () {
 
                 <button
                   onClick={() => setDark(!dark)}
-                  className='border border-indigo-500 px-4 py-1.5 rounded-full hover:bg-indigo-50 dark:hover:bg-indigo-500/10 rounded-full flex items-center gap-2'
+                  className='border border-indigo-500 px-4 py-1.5 text-indigo-600 dark:text-indigo-200 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 rounded-full flex items-center gap-2'
                 >
                   {dark ? (
                     <>
@@ -285,18 +285,22 @@ export default function App () {
             <div className='border-t border-slate-300 dark:border-slate-800 pt-4 flex gap-3'>
               <a
                 href='https://github.com/yan-jan-ram'
+                target='_blank'
+                rel='noopener noreferrer'
                 className='w-9 h-9 border border-slate-400 dark:border-slate-700 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800'
               >
                 <FaGithub size={18} />
               </a>
               <a
                 href='https://www.linkedin.com/in/janaki-ram-yandapalli'
+                target='_blank'
+                rel='noopener noreferrer'
                 className='w-9 h-9 border border-slate-400 dark:border-slate-700 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800'
               >
                 <FaLinkedin size={18} />
               </a>
               <a
-                href='mailto:yandapallijanakiram@gmail.com'
+                href='https://mail.google.com/mail/?view=cm&fs=1&to=yandapallijanakiram@gmail.com'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='w-9 h-9 border border-slate-400 dark:border-slate-700 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800'
@@ -305,6 +309,8 @@ export default function App () {
               </a>
               <a
                 href='tel:+919059256791'
+                target='_blank'
+                rel='noopener noreferrer'
                 className='w-9 h-9 border border-slate-400 dark:border-slate-700 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800'
               >
                 <MdPhone size={18} />
@@ -324,7 +330,7 @@ export default function App () {
                 can act on.
               </p>
               <p className='mt-3'>
-                My work spans the full analytics lifecycle — from data ingestion
+                My work spans the full analytics lifecycle — from data gathering
                 and validation, through modelling and DAX measures, to
                 delivering polished reports that reduce manual effort and
                 support faster decisions. I’m particularly interested in sales,
@@ -373,11 +379,11 @@ export default function App () {
             </Section>
 
             <Section id='education' title='Education'>
-              <div className='space-y-6'>
+              <div className='space-y-4'>
                 {education.map(edu => (
                   <div
                     key={edu.degree}
-                    className='border border-slate-200 dark:border-indigo-500 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none hover-card'
+                    className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
                   >
                     <h3 className='font-semibold'>{edu.degree}</h3>
                     <p className='text-sm text-slate-500'>{edu.institution}</p>
@@ -388,11 +394,11 @@ export default function App () {
             </Section>
 
             <Section id='experience' title='Experience'>
-              <div className='space-y-6'>
+              <div className='space-y-4'>
                 {experience.map(exp => (
                   <div
                     key={exp.role}
-                    className='border border-slate-200 dark:border-indigo-500 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none hover-card'
+                    className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
                   >
                     <h3 className='font-semibold'>{exp.role}</h3>
                     <p className='text-sm text-slate-500'>
@@ -426,7 +432,7 @@ export default function App () {
                 {projects.map(proj => (
                   <div
                     key={proj.title}
-                    className='border border-slate-300 dark:border-indigo-500 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 hover:shadow-md hover:-translate-y-1 transition-transform'
+                    className='border border-slate-300 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 hover:shadow-md hover:-translate-y-1 transition-transform'
                   >
                     {/* Thumbnail */}
                     {proj.image && (
@@ -527,7 +533,7 @@ export default function App () {
 
               <div className='flex gap-3 text-sm'>
                 <a
-                  href='https://mail.google.com/mail/?view=cm&fs=1&to=yandapallijanakiram@gmail.com'
+                  href='mailto:yandapallijanakiram@gmail.com'
                   target='_blank'
                   rel='noopener noreferrer'
                   className='border border-indigo-500 px-4 py-1.5 rounded-full hover:bg-indigo-50 dark:hover:bg-indigo-500/10'
@@ -537,6 +543,8 @@ export default function App () {
                 </a>
                 <a
                   href='https://www.linkedin.com/in/janaki-ram-yandapalli'
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='border border-indigo-500 px-4 py-1.5 rounded-full hover:bg-indigo-50 dark:hover:bg-indigo-500/10'
                 >
                   <FaLinkedin size={18} className='inline mr-2' />

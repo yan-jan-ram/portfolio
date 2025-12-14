@@ -12,15 +12,36 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Base transitions */
 @layer base {
   * {
     @apply transition-colors duration-200;
   }
 }
 
+/* Reusable card system */
 @layer components {
-  .hover-card {
-    @apply transition-transform transition-shadow duration-200 ease-out
-           hover:-translate-y-1 hover:shadow-md;
+  .card {
+    @apply
+      bg-white
+      dark:bg-slate-900
+      rounded-2xl
+      p-4
+      border
+      border-indigo-600/30
+      dark:border-indigo-400/50;
+  }
+
+  .card-hover {
+    @apply
+      transition-all
+      duration-200
+      ease-out
+      hover:-translate-y-0.5
+      hover:shadow-md;
+  }
+
+  .card-stack {
+    @apply space-y-5;
   }
 }
