@@ -178,7 +178,8 @@ const projects = [
 ]
 
 const achievements = [
-  'Recognized by clients for delivering actionable insights that supported proactive sales and operational decisions.'
+'Received client appreciation (2023) for delivering Power BI dashboards used by sales and operations leadership.', 
+'Consistently delivered analytics solutions ahead of deadlines, contributing to improved stakeholder trust and faster reporting cycles.'
 ]
 
 function Section ({ id, title, children }) {
@@ -226,12 +227,12 @@ export default function App () {
               <h1 className='text-3xl sm:text-4xl font-bold'>
                 Yandapalli Janakiram
               </h1>
-              <p className='text-sm text-slate-500 dark:text-slate-300'>
-                Data Analyst / Power BI Data Analyst
-              </p>
-              <p className='text-xs text-slate-500 dark:text-slate-400'>
-                Vishakhapatnam, Andhra Pradesh
-              </p>
+              <b><p className='text-sm text-slate-500 dark:text-slate-300'>
+                Power BI Data Analyst
+              </p></b>
+              <b><p className='text-xs text-slate-500 dark:text-slate-400'>
+                Visakhapatnam, Andhra Pradesh
+              </p></b>
 
               <div className='flex items-center gap-3 mt-3'>
                 <a
