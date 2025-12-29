@@ -69,7 +69,7 @@ const education = [
     degree: 'MBA (Finance)',
     institution: 'Andhra University',
     location: 'Andhra Pradesh',
-    period: '2024 – Present',
+    period: '2024 – 2026',
     details: ['Focus on data-driven financial decision making and analytics.']
   },
   {
@@ -228,7 +228,7 @@ export default function App () {
                 Yandapalli Janakiram
               </h1>
               <b><p className='text-sm text-slate-500 dark:text-slate-300'>
-                Power BI Data Analyst
+                Data Analyst
               </p></b>
               <b><p className='text-xs text-slate-500 dark:text-slate-400'>
                 Visakhapatnam, Andhra Pradesh
