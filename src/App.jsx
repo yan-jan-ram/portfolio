@@ -88,10 +88,10 @@ const experience = [
     location: 'Hyderabad',
     period: 'Mar 2023 – Feb 2024',
     bullets: [
-      'Developed interactive Power BI dashboards for global stakeholders, reducing decision-making time by 20%.',
-      'Centralized and automated data ingestion from 5+ sources using Azure Data Factory, improving data reliability by 35%.',
-      'Optimized reporting workflows using SQL and DAX, reducing manual reporting time by 25%.',
-      'Improved data quality through enhanced validation rules, enabling more accurate forecasting.'
+      'Built and automated Power BI dashboards and performance scorecards used by global ops and finance teams, improving reporting turnaround time.',
+      'Performed data wrangling, validation, and transformation using SQL/Excel, ensuring consistent and analysis-ready datasets across systems.',
+      'Identified reporting redundancies and implemented automation templates, improving data quality and reducing manual effort.',
+      'Partnered with business stakeholders in Agile sprints, contributing to requirements gathering, UAT and iterative dashboard enhancements.'
     ],
     tags: [
       'Power BI',
@@ -104,13 +104,14 @@ const experience = [
   },
   {
     role: 'Data Analyst',
-    company: 'Infosys (Client: Johnson & Johnson)',
+    company: 'Infosys (Client: Johnson and Johnson)',
     location: 'Hyderabad',
     period: 'Jan 2022 – Feb 2023',
     bullets: [
-      'Designed DAX- and SQL-based sales performance reports, improving KPI visibility by 15%.',
-      'Enhanced data accuracy by 30% through robust validation checks and data cleansing processes.',
-      'Collaborated with business teams to interpret insights and support operational decisions.'
+      'Conducted data profiling, reconciliation and validation, improving financial and operational data accuracy by 30%.',
+      'Developed Power BI and DAX dashboards that enhanced visibility into sales trends, product performance, and KPI movements.',
+      'Created structured metadata, documentation and data dictionaries, strengthening reporting governance and audit readiness.',
+      'Supported finance and ops teams with ad-hoc analytics, variance insights and data troubleshooting, accelerating decision-making.'
     ],
     tags: ['SQL', 'Power BI', 'DAX', 'Data Cleansing', 'ETL Workflows']
   }
@@ -225,13 +226,13 @@ export default function App () {
               </div>
 
               <h1 className='text-3xl sm:text-4xl font-bold'>
-                Yandapalli Janakiram
+                Janakiram Yandapalli
               </h1>
               <b><p className='text-sm text-slate-500 dark:text-slate-300'>
-                Data Analyst
+                Data Analyst | BI & Analytics
               </p></b>
               <b><p className='text-xs text-slate-500 dark:text-slate-400'>
-                Visakhapatnam, Andhra Pradesh
+                Hyderabad, Telangana
               </p></b>
 
               <div className='flex items-center gap-3 mt-3'>
@@ -322,21 +323,22 @@ export default function App () {
           {/* RIGHT CONTENT */}
           <main className='lg:w-2/3 space-y-12'>
             <Section id='about' title='About Me'>
-              <p>
-                Data Analyst with 2+ years of experience designing interactive
-                Power BI dashboards, building SQL/Python data pipelines, and
-                improving reporting workflows for global enterprise clients at
-                Infosys (GSK and Johnson & Johnson). I enjoy turning messy,
-                scattered data into clear, reliable insights that stakeholders
-                can act on.
+              <p style={{textAlign: "justify"}}>
+                Data Analyst with 2+ years of experience designing interactive Power BI dashboards, 
+                building SQL/Python data pipelines and improving reporting workflows for global 
+                enterprise clients at Infosys (Glaxo Smith Kline and Johnson & Johnson). I specialize in converting 
+                messy, scattered data into clean, reliable insights that business teams can trust and act on.
               </p>
-              <p className='mt-3'>
-                My work spans the full analytics lifecycle — from data gathering
-                and validation, through modelling and DAX measures, to
-                delivering polished reports that reduce manual effort and
-                support faster decisions. I’m particularly interested in sales,
-                operations, and finance reporting, where good dashboards
-                directly impact business performance.
+              <p style={{textAlign: "justify"}} className='mt-3'>
+                My work spans the full analytics lifecycle—from data gathering, validation, and wrangling, to modelling, 
+                DAX measure creation and delivering polished dashboards that reduce manual effort and enable faster 
+                decision-making. I’m particularly passionate about sales, operations and finance analytics, where 
+                data visibility directly impacts performance.
+              </p>
+              <p style={{textAlign: "justify"}} className='mt-3'>
+                I’m also building foundational data engineering skills (ETL, data pipelines, warehouse concepts, 
+                scalable SQL) to strengthen end-to-end data reliability and collaborate more effectively across 
+                analytics and engineering teams.
               </p>
             </Section>
 
@@ -361,12 +363,15 @@ export default function App () {
                 <div className='flex flex-wrap gap-2 mt-3 text-xs'>
                   {[
                     'DAX',
+                    'EDA',
+                    'KPI Dashboards',
                     'Data Modelling',
                     'ETL Workflows',
                     'Data Quality & Validation',
-                    'Dashboard Design',
+                    'MI Reporting',
                     'Stakeholder Reporting',
-                    'Sales & Operations Analytics'
+                    'Sales & Operations Analytics',
+                    'Metadata Documentation',
                   ].map(tag => (
                     <span
                       key={tag}
