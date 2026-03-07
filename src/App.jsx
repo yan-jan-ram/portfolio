@@ -167,15 +167,15 @@ const projects = [
     image: '/project images/Netflix dashboard.png',
     tech: ['Power BI', 'DAX', 'Excel']
   },
-  {
-    title: 'Superstore sales dashboard',
-    // subtitle: 'Power BI · DAX · Excel · SQL',
-    description:
-      'A Power BI dashboard analyzing Superstore dataset performance across sales, profit, categories, and geographies. Includes interactive filtering and deep-dive product analysis.',
-    link: 'https://github.com/yan-jan-ram/Superstore-sales-dashboard',
-    image: '/project images/superstore dashboard.png',
-    tech: ['Power BI', 'DAX', 'sales analytics']
-  },
+{
+  title: 'Restaurant orders analysis',
+  // subtitle: 'Power BI · DAX · Excel · SQL',
+  description:
+    'A Power BI project analyzing restaurant platform performance including customer behavior, restaurant performance, order trends, and financial metrics. Features retention analysis, menu insights, and operational KPIs with interactive dashboards.',
+  link: 'https://github.com/yan-jan-ram/Restaurants-Analysis',
+  image: '/project images/Restaurants Dashboard.png',
+  tech: ['Power BI', 'DAX', 'SQL', 'data modeling']
+},
 ]
 
 const achievements = [
