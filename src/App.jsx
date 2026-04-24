@@ -243,7 +243,7 @@ export default function App () {
 
               <div className='flex items-center gap-3 mt-3'>
                 <a
-                  href='public/Janakiram_Yandapalli_Data_Analyst-2.5.pdf'
+                  href='Janakiram_Yandapalli_Data_Analyst-2.5.pdf'
                   target='_blank'
                   className='border border-indigo-500 px-4 py-1.5 rounded-full text-indigo-600 dark:text-indigo-200 hover:bg-indigo-50 dark:hover:bg-indigo-500/10'
                 >
