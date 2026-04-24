@@ -122,58 +122,52 @@ const experience = [
 const projects = [
   {
     title: 'Ride-it Analysis',
-    // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'Built predictive dashboards to analyse ride performance, customer behaviour, and revenue trends. Identified drops in rider engagement and proposed metrics to improve retention.',
+      'Analyzed ride-sharing data (~10K+ records) to identify revenue trends, customer behaviour, and operational inefficiencies. Built interactive Power BI dashboards with KPI tracking (revenue, bookings, engagement) and uncovered peak demand patterns and retention gaps.',
     link: 'https://github.com/yan-jan-ram/Ride-it-analysis',
     image: '/project images/Rides dashboard.png',
     tech: ['Power BI', 'DAX', 'Excel', 'SQL', 'ETL']
   },
   {
-    title: 'Restaurant orders analysis',
-    // subtitle: 'Power BI · DAX · Excel · SQL',
+    title: 'Restaurant Orders Analysis',
     description:
-      'A Power BI project analyzing restaurant platform performance including customer behavior, restaurant performance, order trends, and financial metrics. Features retention analysis, menu insights, and operational KPIs with interactive dashboards.',
+      'Analyzed restaurant platform data to evaluate customer behavior, order trends, and financial performance. Built Power BI dashboards with KPIs (revenue, AOV, retention) and identified key factors impacting customer preferences and restaurant performance.',
     link: 'https://github.com/yan-jan-ram/Restaurants-Analysis',
     image: '/project images/Restaurants Dashboard.png',
-    tech: ['Power BI', 'DAX', 'SQL', 'data modeling']
+    tech: ['Power BI', 'DAX', 'SQL', 'Data Modeling']
   },
   {
     title: 'Classic Models Purchase Analysis',
-    // subtitle: 'Power BI · DAX · Excel · SQL',
     description:
-      'A comprehensive Power BI dashboard for analyzing sales of Classic Models across product lines, countries, and offices. Includes sales vs cost analysis, trends, order patterns, and customer distribution.',
+      'Developed a Power BI dashboard to analyze sales across product lines, countries, and offices. Performed trend analysis and cost vs revenue evaluation to identify high-performing products, regional sales patterns, and customer distribution insights.',
     link: 'https://github.com/yan-jan-ram/Classic-Models-Purchase-Analysis',
     image: '/project images/classic models dashboard.png',
     tech: ['Power BI', 'DAX', 'Excel', 'SQL']
   },
   {
-    title: 'Bike sales analysis',
-    // subtitle: 'Power BI · DAX · Excel · SQL',
+    title: 'Bike Sales Analysis',
     description:
-      'An interactive Tableau dashboard analyzing global bike sales performance across products, customer segments, age groups, and regions. Includes KPIs for revenue, profit, YoY growth, and breakdowns such as top-selling products, sales by gender, and country-level performance.',
+      'Built an interactive Tableau dashboard to analyze global bike sales across products, regions, and customer segments. Tracked KPIs (revenue, profit, YoY growth) and identified top-performing products and regional demand patterns.',
     link: 'https://github.com/yan-jan-ram/Bike-Sales',
     liveLink:
       'https://public.tableau.com/app/profile/yandapalli.janakiram/viz/Bikessales_17365258538140/SalesDashboard',
     image: '/project images/bike sales dashboard.png',
-    tech: ['Tableau', 'data visualization', 'sales analytics']
+    tech: ['Tableau', 'Data Visualization', 'Sales Analytics']
   },
   {
-    title: 'EVL dashboard',
-    // subtitle: 'Power BI · DAX · Excel · SQL',
+    title: 'EVL Dashboard',
     description:
-      'A Tableau dashboard analyzing Electric Vehicle (EV) distribution across Washington State. It provides breakdowns by make, model, vehicle type, county, and registered ZIP codes.',
+      'Analyzed Electric Vehicle distribution data across Washington State using Tableau. Built dashboards to visualize vehicle types, regional adoption trends, and model-level distribution to highlight EV growth patterns.',
     link: 'https://github.com/yan-jan-ram/EVL-data',
     liveLink:
       'https://public.tableau.com/app/profile/yandapalli.janakiram/viz/EVLdata/EVPopulationdata',
     image: '/project images/evl dashboard.png',
-    tech: ['Tableau', 'data visualization']
+    tech: ['Tableau', 'Data Visualization']
   },
   {
-    title: 'Netflix dashboard',
-    // subtitle: 'Power BI · DAX · Excel · SQL',
+    title: 'Netflix Dashboard',
     description:
-      'A Power BI dashboard analyzing Netflix’s global content catalog, focusing on content type, genre, ratings, and regional distribution. Highlights trends in content additions and global release patterns.',
+      'Developed a Power BI dashboard to analyze Netflix’s global content catalog by genre, type, and region. Identified trends in content additions, regional distribution, and content mix to support content strategy insights.',
     link: 'https://github.com/yan-jan-ram/Netflix-BI',
     image: '/project images/Netflix dashboard.png',
     tech: ['Power BI', 'DAX', 'Excel']
@@ -438,95 +432,99 @@ export default function App () {
             </Section>
 
             <Section id='projects' title='Projects'>
-              <div className='space-y-6'>
-                {projects.map(proj => (
-                  <div
-                    key={proj.title}
-                    className='border border-slate-300 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 hover:shadow-md hover:-translate-y-1 transition-transform'
+  <div className='space-y-6'>
+    {projects.map(proj => (
+      <div
+        key={proj.title}
+        className='group border border-slate-300 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
+      >
+        {/* Thumbnail */}
+        {proj.image && (
+          <div className='w-full sm:w-52 flex-shrink-0 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700'>
+            <img
+              src={proj.image}
+              alt={proj.title}
+              className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
+            />
+          </div>
+        )}
+
+        {/* Content */}
+        <div className='flex-1 flex flex-col gap-2'>
+          <div className='flex items-start justify-between gap-3'>
+            <div>
+              <h3 className='font-semibold text-lg text-slate-900 dark:text-slate-100'>
+                {proj.title}
+              </h3>
+
+              {/* LIVE badge */}
+              {proj.liveLink && (
+                <span className='flex items-center gap-1 text-green-500 text-xs font-semibold mt-1'>
+                  <span className='inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse'></span>
+                  LIVE
+                </span>
+              )}
+
+              {proj.subtitle && (
+                <p className='text-sm text-slate-500 dark:text-slate-400'>
+                  {proj.subtitle}
+                </p>
+              )}
+            </div>
+
+            {/* Links */}
+            {(proj.link || proj.liveLink) && (
+              <div className='flex flex-col items-end gap-2'>
+                {proj.link && (
+                  <a
+                    href={proj.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-flex items-center gap-1 rounded-full border border-slate-300 dark:border-slate-700 px-3 py-1 text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition'
                   >
-                    {/* Thumbnail */}
-                    {proj.image && (
-                      <div className='w-full sm:w-52 flex-shrink-0'>
-                        <img
-                          src={proj.image}
-                          alt={proj.title}
-                          className='w-full h-full object-cover rounded-xl border border-slate-200 dark:border-slate-700'
-                        />
-                      </div>
-                    )}
+                    <FaExternalLinkAlt size={10} />
+                    <span>GitHub</span>
+                  </a>
+                )}
 
-                    {/* Text content */}
-                    <div className='flex-1 flex flex-col gap-2'>
-                      <div className='flex items-start justify-between gap-3'>
-                        <div>
-                          <h3 className='font-semibold text-base sm:text-lg text-slate-900 dark:text-slate-100'>
-                            {proj.title}
-                          </h3>
-                          {/* LIVE badge */}
-                          {proj.liveLink && (
-                            <span className='flex items-center gap-1 text-green-500 text-xs sm:text-sm font-semibold'>
-                              <span className='inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse'></span>
-                              LIVE
-                            </span>
-                          )}
-                          {proj.subtitle && (
-                            <p className='text-xs sm:text-sm text-slate-500 dark:text-slate-400'>
-                              {proj.subtitle}
-                            </p>
-                          )}
-                        </div>
-
-                        {(proj.link || proj.liveLink) && (
-                          <div className='flex flex-col items-end gap-2'>
-                            {proj.link && (
-                              <a
-                                href={proj.link}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='inline-flex items-center gap-1 rounded-full border border-slate-300 dark:border-slate-700 px-3 py-1 text-[11px] sm:text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
-                              >
-                                <FaExternalLinkAlt size={10} />
-                                <span>GitHub</span>
-                              </a>
-                            )}
-
-                            {proj.liveLink && (
-                              <a
-                                href={proj.liveLink}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='inline-flex items-center gap-1 rounded-full border border-emerald-400/80 px-3 py-1 text-[11px] sm:text-xs text-emerald-600 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30'
-                              >
-                                <FaExternalLinkAlt size={10} />
-                                <span>Live Dashboard</span>
-                              </a>
-                            )}
-                          </div>
-                        )}
-                      </div>
-
-                      <p className='text-sm text-slate-700 dark:text-slate-200 mt-1'>
-                        {proj.description}
-                      </p>
-
-                      {/* Tech tags */}
-                      {proj.tech && (
-                        <div className='flex flex-wrap gap-2 mt-3'>
-                          {proj.tech.map(tag => (
-                            <span
-                              key={tag}
-                              className='px-3 py-1 rounded-full text-xs bg-indigo-100 text-indigo-700 dark:bg-indigo-600 dark:text-white'
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                {proj.liveLink && (
+                  <a
+                    href={proj.liveLink}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-flex items-center gap-1 rounded-full border border-emerald-400/80 px-3 py-1 text-xs text-emerald-600 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition'
+                  >
+                    <FaExternalLinkAlt size={10} />
+                    <span>Live Dashboard</span>
+                  </a>
+                )}
               </div>
-            </Section>
+            )}
+          </div>
+
+          {/* Description */}
+          <p className='text-sm text-slate-700 dark:text-slate-300 mt-1 leading-relaxed'>
+            {proj.description}
+          </p>
+
+          {/* Tech Tags */}
+          {proj.tech && (
+            <div className='flex flex-wrap gap-2 mt-3'>
+              {proj.tech.map(tag => (
+                <span
+                  key={tag}
+                  className='px-3 py-1 rounded-full text-xs bg-indigo-100 text-indigo-700 dark:bg-indigo-600 dark:text-white'
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>
 
             <Section id='education' title='Education'>
               <div className='space-y-4'>
