@@ -35,8 +35,8 @@ const skillGroups = [
     title: 'Programming & Libraries',
     items: [
       { label: 'Python', icon: SiPython },
-      { label: 'Pandas', icon: SiPandas },
-      { label: 'NumPy', icon: SiNumpy }
+      { label: 'NumPy', icon: SiNumpy },
+      { label: 'Pandas', icon: SiPandas }
     ]
   },
   {
@@ -51,7 +51,7 @@ const skillGroups = [
     title: 'Databases',
     items: [
       { label: 'MySQL', icon: SiMysql },
-      { label: 'Oracle SQL', icon: FaDatabase }
+      { label: 'SQL Server', icon: FaDatabase }
     ]
   },
   {
@@ -88,10 +88,11 @@ const experience = [
     location: 'Hyderabad',
     period: 'Mar 2023 – Feb 2024',
     bullets: [
-      'Built and automated Power BI dashboards and performance scorecards used by global ops and finance teams, improving reporting turnaround time.',
-      'Performed data wrangling, validation, and transformation using SQL/Excel, ensuring consistent and analysis-ready datasets across systems.',
-      'Identified reporting redundancies and implemented automation templates, improving data quality and reducing manual effort.',
-      'Partnered with business stakeholders in Agile sprints, contributing to requirements gathering, UAT and iterative dashboard enhancements.'
+      'Worked with SQL and Excel for data extraction, validation, and transformation to support reporting needs.',
+      'Assisted in developing Power BI dashboards and scorecards for tracking operational and financial metrics.',
+      'Performed data cleaning, reconciliation, and quality checks to ensure consistency across datasets.',
+      'Supported reporting processes by standardizing templates and improving data preparation workflows.',
+      'Collaborated with cross-functional teams in an Agile environment, contributing to requirements gathering and UAT.'
     ],
     tags: [
       'Power BI',
@@ -108,10 +109,11 @@ const experience = [
     location: 'Hyderabad',
     period: 'Jan 2022 – Feb 2023',
     bullets: [
-      'Conducted data profiling, reconciliation and validation, improving financial and operational data accuracy by 30%.',
-      'Developed Power BI and DAX dashboards that enhanced visibility into sales trends, product performance, and KPI movements.',
-      'Created structured metadata, documentation and data dictionaries, strengthening reporting governance and audit readiness.',
-      'Supported finance and ops teams with ad-hoc analytics, variance insights and data troubleshooting, accelerating decision-making.'
+      'Performed data profiling, validation, and reconciliation to maintain data accuracy and consistency.',
+      'Supported development of Power BI dashboards and DAX-based reports for tracking sales and KPI metrics.',
+      'Assisted in data preparation and transformation for analysis using SQL and Excel.',
+      'Created and maintained documentation, metadata, and data dictionaries for reporting processes.',
+      'Provided ad-hoc data analysis and support to business teams for troubleshooting and insights.'
     ],
     tags: ['SQL', 'Power BI', 'DAX', 'Data Cleansing', 'ETL Workflows']
   }
@@ -126,6 +128,15 @@ const projects = [
     link: 'https://github.com/yan-jan-ram/Ride-it-analysis',
     image: '/project images/Rides dashboard.png',
     tech: ['Power BI', 'DAX', 'Excel', 'SQL', 'ETL']
+  },
+  {
+    title: 'Restaurant orders analysis',
+    // subtitle: 'Power BI · DAX · Excel · SQL',
+    description:
+      'A Power BI project analyzing restaurant platform performance including customer behavior, restaurant performance, order trends, and financial metrics. Features retention analysis, menu insights, and operational KPIs with interactive dashboards.',
+    link: 'https://github.com/yan-jan-ram/Restaurants-Analysis',
+    image: '/project images/Restaurants Dashboard.png',
+    tech: ['Power BI', 'DAX', 'SQL', 'data modeling']
   },
   {
     title: 'Classic Models Purchase Analysis',
@@ -166,21 +177,12 @@ const projects = [
     link: 'https://github.com/yan-jan-ram/Netflix-BI',
     image: '/project images/Netflix dashboard.png',
     tech: ['Power BI', 'DAX', 'Excel']
-  },
-{
-  title: 'Restaurant orders analysis',
-  // subtitle: 'Power BI · DAX · Excel · SQL',
-  description:
-    'A Power BI project analyzing restaurant platform performance including customer behavior, restaurant performance, order trends, and financial metrics. Features retention analysis, menu insights, and operational KPIs with interactive dashboards.',
-  link: 'https://github.com/yan-jan-ram/Restaurants-Analysis',
-  image: '/project images/Restaurants Dashboard.png',
-  tech: ['Power BI', 'DAX', 'SQL', 'data modeling']
-},
+  }
 ]
 
 const achievements = [
-'Received client appreciation (2023) for delivering Power BI dashboards used by sales and operations leadership.', 
-'Consistently delivered analytics solutions ahead of deadlines, contributing to improved stakeholder trust and faster reporting cycles.'
+  'Received client appreciation (2023) for delivering Power BI dashboards used by sales and operations leadership.',
+  'Successfully completed multiple end-to-end data analysis projects involving SQL, Python, and Power BI.'
 ]
 
 function Section ({ id, title, children }) {
@@ -228,16 +230,20 @@ export default function App () {
               <h1 className='text-3xl sm:text-4xl font-bold'>
                 Janakiram Yandapalli
               </h1>
-              <b><p className='text-sm text-slate-500 dark:text-slate-300'>
-                Data Analyst | BI & Analytics
-              </p></b>
-              <b><p className='text-xs text-slate-500 dark:text-slate-400'>
-                Hyderabad, Telangana
-              </p></b>
+              <b>
+                <p className='text-sm text-slate-500 dark:text-slate-300'>
+                  Data Analyst | BI & Analytics
+                </p>
+              </b>
+              <b>
+                <p className='text-xs text-slate-500 dark:text-slate-400'>
+                  Hyderabad, Telangana
+                </p>
+              </b>
 
               <div className='flex items-center gap-3 mt-3'>
                 <a
-                  href='Janakiram Yandapalli_Data Analyst_2.5.pdf'
+                  href='public/Janakiram_Yandapalli_Data_Analyst-2.5.pdf'
                   target='_blank'
                   className='border border-indigo-500 px-4 py-1.5 rounded-full text-indigo-600 dark:text-indigo-200 hover:bg-indigo-50 dark:hover:bg-indigo-500/10'
                 >
@@ -323,22 +329,35 @@ export default function App () {
           {/* RIGHT CONTENT */}
           <main className='lg:w-2/3 space-y-12'>
             <Section id='about' title='About Me'>
-              <p style={{textAlign: "justify"}}>
-                Data Analyst with 2+ years of experience designing interactive Power BI dashboards, 
-                building SQL/Python data pipelines and improving reporting workflows for global 
-                enterprise clients at Infosys (Glaxo Smith Kline and Johnson & Johnson). I specialize in converting 
-                messy, scattered data into clean, reliable insights that business teams can trust and act on.
+              <p style={{ textAlign: 'justify' }} className='mt-3'>
+                <b>Data Analyst</b> with <b>2 years of IT experience in software
+                engineering</b>, with hands-on expertise in <b>SQL, Python, and Power
+                BI</b>. Experienced in working with data across enterprise
+                environments at Infosys, supporting <b>reporting, data validation,
+                and analytics</b> use cases for global clients including
+                GlaxoSmithKline and Johnson & Johnson.
               </p>
-              <p style={{textAlign: "justify"}} className='mt-3'>
-                My work spans the full analytics lifecycle—from data gathering, validation, and wrangling, to modelling, 
-                DAX measure creation and delivering polished dashboards that reduce manual effort and enable faster 
-                decision-making. I’m particularly passionate about sales, operations and finance analytics, where 
-                data visibility directly impacts performance.
+              <p style={{ textAlign: 'justify' }} className='mt-3'>
+                I specialize in transforming raw, scattered data into clean,
+                structured datasets and meaningful insights through <b>data
+                cleaning, exploratory analysis, and dashboard development</b>. My
+                work includes building interactive <b>Power BI dashboards,
+                performing data validation and reconciliation</b>, and supporting
+                reporting workflows to improve data accuracy and usability.
               </p>
-              <p style={{textAlign: "justify"}} className='mt-3'>
-                I’m also building foundational data engineering skills (ETL, data pipelines, warehouse concepts, 
-                scalable SQL) to strengthen end-to-end data reliability and collaborate more effectively across 
-                analytics and engineering teams.
+              <p style={{ textAlign: 'justify' }} className='mt-3'>
+                My experience spans the core analytics <b>workflow—data
+                preparation, transformation, analysis, and
+                visualization</b>—combined with strong project-based work in sales,
+                customer, and operational analytics. I focus on delivering
+                clear, <b>actionable insights</b> that support business decisions and
+                performance tracking.
+              </p>
+              <p style={{ textAlign: 'justify' }} className='mt-3'>
+                I am also actively strengthening my understanding of <b>ETL
+                processes, data pipelines, and data warehousing</b> concepts to
+                enhance end-to-end data handling and collaborate effectively
+                across analytics and engineering teams.
               </p>
             </Section>
 
@@ -371,7 +390,7 @@ export default function App () {
                     'MI Reporting',
                     'Stakeholder Reporting',
                     'Sales & Operations Analytics',
-                    'Metadata Documentation',
+                    'Metadata Documentation'
                   ].map(tag => (
                     <span
                       key={tag}
@@ -381,21 +400,6 @@ export default function App () {
                     </span>
                   ))}
                 </div>
-              </div>
-            </Section>
-
-            <Section id='education' title='Education'>
-              <div className='space-y-4'>
-                {education.map(edu => (
-                  <div
-                    key={edu.degree}
-                    className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
-                  >
-                    <h3 className='font-semibold'>{edu.degree}</h3>
-                    <p className='text-sm text-slate-500'>{edu.institution}</p>
-                    <p className='text-sm text-slate-500'>{edu.period}</p>
-                  </div>
-                ))}
               </div>
             </Section>
 
@@ -519,6 +523,21 @@ export default function App () {
                         </div>
                       )}
                     </div>
+                  </div>
+                ))}
+              </div>
+            </Section>
+
+            <Section id='education' title='Education'>
+              <div className='space-y-4'>
+                {education.map(edu => (
+                  <div
+                    key={edu.degree}
+                    className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
+                  >
+                    <h3 className='font-semibold'>{edu.degree}</h3>
+                    <p className='text-sm text-slate-500'>{edu.institution}</p>
+                    <p className='text-sm text-slate-500'>{edu.period}</p>
                   </div>
                 ))}
               </div>
