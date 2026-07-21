@@ -1,9 +1,17 @@
 import React, { useState } from 'react'
 
-// SimpleIcons (these exist in all versions)
-import { SiPython, SiPandas, SiNumpy, SiMysql } from 'react-icons/si'
+// SimpleIcons
+import {
+  SiPython,
+  SiPandas,
+  SiNumpy,
+  SiMysql,
+  SiOracle,
+  SiTableau,
+  SiJupyter,
+} from 'react-icons/si'
 
-// FontAwesome (always safe)
+// FontAwesome
 import {
   FaGithub,
   FaLinkedin,
@@ -14,7 +22,10 @@ import {
   FaFileExcel,
   FaSun,
   FaMoon,
-  FaExternalLinkAlt
+  FaExternalLinkAlt,
+  FaJava,
+  FaCode,
+  FaChartLine
 } from 'react-icons/fa'
 
 import { MdEmail, MdPhone } from 'react-icons/md'
@@ -29,38 +40,45 @@ const navItems = [
   { id: 'contact', label: 'Contact' }
 ]
 
-// Skills grouped for UI
 const skillGroups = [
   {
-    title: 'Programming & Libraries',
+    title: 'Programming',
     items: [
-      { label: 'Python', icon: SiPython },
-      { label: 'NumPy', icon: SiNumpy },
-      { label: 'Pandas', icon: SiPandas }
+      { label: 'Java', icon: FaJava },
+      { label: 'Python', icon: SiPython }
     ]
   },
   {
-    title: 'BI & Analytics',
+    title: 'Python Libraries',
+    items: [
+      { label: 'Pandas', icon: SiPandas },
+      { label: 'NumPy', icon: SiNumpy },
+      { label: 'Matplotlib', icon: FaChartLine }
+    ]
+  },
+  {
+    title: 'Data Analytics',
     items: [
       { label: 'Power BI', icon: FaChartBar },
-      { label: 'Tableau', icon: FaChartPie },
+      { label: 'Tableau', icon: SiTableau },
       { label: 'Excel', icon: FaFileExcel }
     ]
   },
   {
     title: 'Databases',
     items: [
+      { label: 'SQL Server', icon: FaDatabase },
       { label: 'MySQL', icon: SiMysql },
-      { label: 'SQL Server', icon: FaDatabase }
+      { label: 'Oracle', icon: SiOracle }
     ]
   },
   {
-    title: 'Cloud & ETL (ADF, ADLS)',
-    items: [{ label: 'Azure', icon: FaCloud }]
-  },
-  {
     title: 'Tools',
-    items: [{ label: 'GitHub', icon: FaGithub }]
+    items: [
+      { label: 'GitHub', icon: FaGithub },
+      { label: 'Jupyter', icon: SiJupyter },
+      { label: 'VS Code', icon: FaCode }
+    ]
   }
 ]
 
@@ -83,39 +101,32 @@ const education = [
 
 const experience = [
   {
-    role: 'Data Analyst',
+    role: 'System Engineer',
     company: 'Infosys (Client: Glaxo Smith Kline)',
     location: 'Hyderabad',
     period: 'Mar 2023 – Feb 2024',
     bullets: [
-      'Worked with SQL and Excel for data extraction, validation, and transformation to support reporting needs.',
-      'Assisted in developing Power BI dashboards and scorecards for tracking operational and financial metrics.',
-      'Performed data cleaning, reconciliation, and quality checks to ensure consistency across datasets.',
-      'Supported reporting processes by standardizing templates and improving data preparation workflows.',
-      'Collaborated with cross-functional teams in an Agile environment, contributing to requirements gathering and UAT.'
+      'Developed and maintained Java-based enterprise applications supporting business operations.',
+      'Wrote SQL queries for data retrieval, validation, and issue investigation.',
+      'Performed data validation, reconciliation, and root cause analysis to ensure data accuracy.',
+      'Collaborated with Business Analysts, QA teams, and stakeholders during Agile development and UAT activities.',
+      'Prepared Excel-based reports and maintained technical documentation to support project delivery.'
     ],
-    tags: [
-      'Power BI',
-      'SQL',
-      'DAX',
-      'Azure Data Factory',
-      'Azure Data Lake',
-      'Data Quality'
-    ]
+    tags: ['Java', 'SQL', 'Excel', 'Agile', 'Data Validation', 'UAT']
   },
   {
-    role: 'Data Analyst',
+    role: 'System Engineer',
     company: 'Infosys (Client: Johnson and Johnson)',
     location: 'Hyderabad',
     period: 'Jan 2022 – Feb 2023',
     bullets: [
-      'Performed data profiling, validation, and reconciliation to maintain data accuracy and consistency.',
-      'Supported development of Power BI dashboards and DAX-based reports for tracking sales and KPI metrics.',
-      'Assisted in data preparation and transformation for analysis using SQL and Excel.',
-      'Created and maintained documentation, metadata, and data dictionaries for reporting processes.',
-      'Provided ad-hoc data analysis and support to business teams for troubleshooting and insights.'
+      'Contributed to the development and enhancement of enterprise Java applications.',
+      'Used SQL to retrieve, validate, and analyze application data during development and testing.',
+      'Assisted in data reconciliation and troubleshooting to resolve application and data-related issues.',
+      'Worked closely with cross-functional teams to gather requirements and deliver software enhancements.',
+      'Created and maintained technical documentation for application features and support activities.'
     ],
-    tags: ['SQL', 'Power BI', 'DAX', 'Data Cleansing', 'ETL Workflows']
+    tags: ['Java', 'SQL', 'Excel', 'Agile', 'Documentation']
   }
 ]
 
@@ -175,7 +186,7 @@ const projects = [
 ]
 
 const achievements = [
-  'Received client appreciation (2023) for delivering Power BI dashboards used by sales and operations leadership.',
+  'Received Client Appreciation Award for timely delivery and contribution to enterprise application support.',
   'Successfully completed multiple end-to-end data analysis projects involving SQL, Python, and Power BI.'
 ]
 
@@ -324,34 +335,42 @@ export default function App () {
           <main className='lg:w-2/3 space-y-12'>
             <Section id='about' title='About Me'>
               <p style={{ textAlign: 'justify' }} className='mt-3'>
-                <b>Data Analyst</b> with <b>2 years of IT experience in software
-                engineering</b>, with hands-on expertise in <b>SQL, Python, and Power
-                BI</b>. Experienced in working with data across enterprise
-                environments at Infosys, supporting <b>reporting, data validation,
-                and analytics</b> use cases for global clients including
-                GlaxoSmithKline and Johnson & Johnson.
+                <b>System Engineer</b> with{' '}
+                <b>2+ years of enterprise IT experience</b> at <b>Infosys</b>,
+                working on <b>Java-based applications</b> for global clients
+                including
+                <b> Glaxo Smith Kline </b>and<b> Johnson & Johnson</b>. During
+                my time in enterprise software development, I worked extensively
+                with <b>SQL, data validation,</b> and cross-functional teams,
+                which sparked my interest in solving business problems through
+                data.
               </p>
               <p style={{ textAlign: 'justify' }} className='mt-3'>
-                I specialize in transforming raw, scattered data into clean,
-                structured datasets and meaningful insights through <b>data
-                cleaning, exploratory analysis, and dashboard development</b>. My
-                work includes building interactive <b>Power BI dashboards,
-                performing data validation and reconciliation</b>, and supporting
-                reporting workflows to improve data accuracy and usability.
+                Over time, I developed strong analytical skills through hands-on
+                work with <b>SQL, Power BI, Python, and Excel</b>, building
+                end-to-end analytics projects involving
+                <b>
+                  data cleaning, exploratory data analysis (EDA), dashboard
+                  development,{' '}
+                </b>
+                and<b> business reporting.</b> I enjoy transforming raw data
+                into <b>meaningful insights</b> that support informed
+                decision-making and performance improvement.
               </p>
               <p style={{ textAlign: 'justify' }} className='mt-3'>
-                My experience spans the core analytics <b>workflow—data
-                preparation, transformation, analysis, and
-                visualization</b>—combined with strong project-based work in sales,
-                customer, and operational analytics. I focus on delivering
-                clear, <b>actionable insights</b> that support business decisions and
-                performance tracking.
+                My projects span <b>sales, customer, restaurant, mobility, </b>
+                and<b> operational analytics, </b>
+                where I've applied data preparation, visualization, KPI
+                tracking, and trend analysis to uncover actionable business
+                insights. I'm also strengthening my understanding of
+                <b> ETL processes, data pipelines, </b>and
+                <b> data warehousing</b> concepts to build a strong foundation
+                for modern analytics workflows.
               </p>
               <p style={{ textAlign: 'justify' }} className='mt-3'>
-                I am also actively strengthening my understanding of <b>ETL
-                processes, data pipelines, and data warehousing</b> concepts to
-                enhance end-to-end data handling and collaborate effectively
-                across analytics and engineering teams.
+                I'm currently seeking opportunities as a <b>Data Analyst,</b>{' '}
+                where I can combine my software engineering background with
+                analytical problem-solving to deliver data-driven solutions.
               </p>
             </Section>
 
@@ -375,16 +394,19 @@ export default function App () {
                 {/* Extra skill tags */}
                 <div className='flex flex-wrap gap-2 mt-3 text-xs'>
                   {[
+                    'SQL',
                     'DAX',
-                    'EDA',
-                    'KPI Dashboards',
+                    'Dashboard Development',
+                    'Data Cleaning',
+                    'Data Validation',
+                    'Data Wrangling',
+                    'Exploratory Data Analysis',
+                    'Trend Analysis',
+                    'KPI Reporting',
                     'Data Modelling',
-                    'ETL Workflows',
-                    'Data Quality & Validation',
-                    'MI Reporting',
-                    'Stakeholder Reporting',
-                    'Sales & Operations Analytics',
-                    'Metadata Documentation'
+                    'ETL Concepts',
+                    'Data Warehousing Concepts',
+                    'Agile'
                   ].map(tag => (
                     <span
                       key={tag}
@@ -432,99 +454,99 @@ export default function App () {
             </Section>
 
             <Section id='projects' title='Projects'>
-  <div className='space-y-6'>
-    {projects.map(proj => (
-      <div
-        key={proj.title}
-        className='group border border-slate-300 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
-      >
-        {/* Thumbnail */}
-        {proj.image && (
-          <div className='w-full sm:w-52 flex-shrink-0 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700'>
-            <img
-              src={proj.image}
-              alt={proj.title}
-              className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
-            />
-          </div>
-        )}
-
-        {/* Content */}
-        <div className='flex-1 flex flex-col gap-2'>
-          <div className='flex items-start justify-between gap-3'>
-            <div>
-              <h3 className='font-semibold text-lg text-slate-900 dark:text-slate-100'>
-                {proj.title}
-              </h3>
-
-              {/* LIVE badge */}
-              {proj.liveLink && (
-                <span className='flex items-center gap-1 text-green-500 text-xs font-semibold mt-1'>
-                  <span className='inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse'></span>
-                  LIVE
-                </span>
-              )}
-
-              {proj.subtitle && (
-                <p className='text-sm text-slate-500 dark:text-slate-400'>
-                  {proj.subtitle}
-                </p>
-              )}
-            </div>
-
-            {/* Links */}
-            {(proj.link || proj.liveLink) && (
-              <div className='flex flex-col items-end gap-2'>
-                {proj.link && (
-                  <a
-                    href={proj.link}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='inline-flex items-center gap-1 rounded-full border border-slate-300 dark:border-slate-700 px-3 py-1 text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition'
+              <div className='space-y-6'>
+                {projects.map(proj => (
+                  <div
+                    key={proj.title}
+                    className='group border border-slate-300 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
                   >
-                    <FaExternalLinkAlt size={10} />
-                    <span>GitHub</span>
-                  </a>
-                )}
+                    {/* Thumbnail */}
+                    {proj.image && (
+                      <div className='w-full sm:w-52 flex-shrink-0 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700'>
+                        <img
+                          src={proj.image}
+                          alt={proj.title}
+                          className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
+                        />
+                      </div>
+                    )}
 
-                {proj.liveLink && (
-                  <a
-                    href={proj.liveLink}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='inline-flex items-center gap-1 rounded-full border border-emerald-400/80 px-3 py-1 text-xs text-emerald-600 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition'
-                  >
-                    <FaExternalLinkAlt size={10} />
-                    <span>Live Dashboard</span>
-                  </a>
-                )}
+                    {/* Content */}
+                    <div className='flex-1 flex flex-col gap-2'>
+                      <div className='flex items-start justify-between gap-3'>
+                        <div>
+                          <h3 className='font-semibold text-lg text-slate-900 dark:text-slate-100'>
+                            {proj.title}
+                          </h3>
+
+                          {/* LIVE badge */}
+                          {proj.liveLink && (
+                            <span className='flex items-center gap-1 text-green-500 text-xs font-semibold mt-1'>
+                              <span className='inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse'></span>
+                              LIVE
+                            </span>
+                          )}
+
+                          {proj.subtitle && (
+                            <p className='text-sm text-slate-500 dark:text-slate-400'>
+                              {proj.subtitle}
+                            </p>
+                          )}
+                        </div>
+
+                        {/* Links */}
+                        {(proj.link || proj.liveLink) && (
+                          <div className='flex flex-col items-end gap-2'>
+                            {proj.link && (
+                              <a
+                                href={proj.link}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='inline-flex items-center gap-1 rounded-full border border-slate-300 dark:border-slate-700 px-3 py-1 text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition'
+                              >
+                                <FaExternalLinkAlt size={10} />
+                                <span>GitHub</span>
+                              </a>
+                            )}
+
+                            {proj.liveLink && (
+                              <a
+                                href={proj.liveLink}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='inline-flex items-center gap-1 rounded-full border border-emerald-400/80 px-3 py-1 text-xs text-emerald-600 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition'
+                              >
+                                <FaExternalLinkAlt size={10} />
+                                <span>Live Dashboard</span>
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Description */}
+                      <p className='text-sm text-slate-700 dark:text-slate-300 mt-1 leading-relaxed'>
+                        {proj.description}
+                      </p>
+
+                      {/* Tech Tags */}
+                      {proj.tech && (
+                        <div className='flex flex-wrap gap-2 mt-3'>
+                          {proj.tech.map(tag => (
+                            <span
+                              key={tag}
+                              className='px-3 py-1 rounded-full text-xs bg-indigo-100 text-indigo-700 dark:bg-indigo-600 dark:text-white'
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
-            )}
-          </div>
-
-          {/* Description */}
-          <p className='text-sm text-slate-700 dark:text-slate-300 mt-1 leading-relaxed'>
-            {proj.description}
-          </p>
-
-          {/* Tech Tags */}
-          {proj.tech && (
-            <div className='flex flex-wrap gap-2 mt-3'>
-              {proj.tech.map(tag => (
-                <span
-                  key={tag}
-                  className='px-3 py-1 rounded-full text-xs bg-indigo-100 text-indigo-700 dark:bg-indigo-600 dark:text-white'
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    ))}
-  </div>
-</Section>
+            </Section>
 
             <Section id='education' title='Education'>
               <div className='space-y-4'>
