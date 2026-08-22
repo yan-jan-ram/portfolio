@@ -84,14 +84,14 @@ const skillGroups = [
 
 const education = [
   {
-    degree: 'MBA (Finance)',
+    degree: 'MBA (Finance) - 92%',
     institution: 'Andhra University',
     location: 'Andhra Pradesh',
     period: '2024 – 2026',
     details: ['Focus on data-driven financial decision making and analytics.']
   },
   {
-    degree: 'B.Tech (Civil Engineering)',
+    degree: 'B.Tech (Civil Engineering) - 86%',
     institution: 'GMR Institute of Technology',
     location: 'Andhra Pradesh',
     period: '2017 – 2021',
