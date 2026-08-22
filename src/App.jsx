@@ -8,7 +8,7 @@ import {
   SiMysql,
   SiOracle,
   SiTableau,
-  SiJupyter,
+  SiJupyter
 } from 'react-icons/si'
 
 // FontAwesome
@@ -44,8 +44,8 @@ const skillGroups = [
   {
     title: 'Programming',
     items: [
+      { label: 'Python', icon: SiPython },
       { label: 'Java', icon: FaJava },
-      { label: 'Python', icon: SiPython }
     ]
   },
   {
@@ -248,7 +248,7 @@ export default function App () {
 
               <div className='flex items-center gap-3 mt-3'>
                 <a
-                  href='Janakiram_Yandapalli_Data_Analyst-2.5.pdf'
+                  href='Janakiram_Yandapalli_Data_Analyst.pdf'
                   target='_blank'
                   className='border border-indigo-500 px-4 py-1.5 rounded-full text-indigo-600 dark:text-indigo-200 hover:bg-indigo-50 dark:hover:bg-indigo-500/10'
                 >
@@ -339,8 +339,8 @@ export default function App () {
                 <b>2+ years of enterprise IT experience</b> at <b>Infosys</b>,
                 working on <b>Java-based applications</b> for global clients
                 including
-                <b> Glaxo Smith Kline </b>and<b> Johnson & Johnson</b>. During
-                my time in enterprise software development, I worked extensively
+                <b> GlaxoSmithKline </b>and<b> Johnson & Johnson</b>. During my
+                time in enterprise software development, I worked extensively
                 with <b>SQL, data validation,</b> and cross-functional teams,
                 which sparked my interest in solving business problems through
                 data.
@@ -416,40 +416,6 @@ export default function App () {
                     </span>
                   ))}
                 </div>
-              </div>
-            </Section>
-
-            <Section id='experience' title='Experience'>
-              <div className='space-y-4'>
-                {experience.map(exp => (
-                  <div
-                    key={exp.role}
-                    className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
-                  >
-                    <h3 className='font-semibold'>{exp.role}</h3>
-                    <p className='text-sm text-slate-500'>
-                      {exp.company} — {exp.location}
-                    </p>
-                    <p className='text-sm text-slate-500 mb-2'>{exp.period}</p>
-
-                    <ul className='list-disc ml-5 text-sm'>
-                      {exp.bullets.map(b => (
-                        <li key={b}>{b}</li>
-                      ))}
-                    </ul>
-
-                    <div className='flex flex-wrap gap-2 mt-3 text-xs'>
-                      {exp.tags.map(tag => (
-                        <span
-                          key={tag}
-                          className='border border-slate-400 dark:border-slate-700 px-2 py-1 rounded-full'
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
               </div>
             </Section>
 
@@ -542,6 +508,40 @@ export default function App () {
                           ))}
                         </div>
                       )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Section>
+
+            <Section id='experience' title='Experience'>
+              <div className='space-y-4'>
+                {experience.map(exp => (
+                  <div
+                    key={exp.role}
+                    className='border border-slate-200 dark:border-slate-800 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-none'
+                  >
+                    <h3 className='font-semibold'>{exp.role}</h3>
+                    <p className='text-sm text-slate-500'>
+                      {exp.company} — {exp.location}
+                    </p>
+                    <p className='text-sm text-slate-500 mb-2'>{exp.period}</p>
+
+                    <ul className='list-disc ml-5 text-sm'>
+                      {exp.bullets.map(b => (
+                        <li key={b}>{b}</li>
+                      ))}
+                    </ul>
+
+                    <div className='flex flex-wrap gap-2 mt-3 text-xs'>
+                      {exp.tags.map(tag => (
+                        <span
+                          key={tag}
+                          className='border border-slate-400 dark:border-slate-700 px-2 py-1 rounded-full'
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 ))}
