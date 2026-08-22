@@ -102,7 +102,7 @@ const education = [
 const experience = [
   {
     role: 'System Engineer',
-    company: 'Infosys (Client: Glaxo Smith Kline)',
+    company: 'Infosys (Client: GlaxoSmithKline (GSK))',
     location: 'Hyderabad',
     period: 'Mar 2023 – Feb 2024',
     bullets: [
@@ -116,7 +116,7 @@ const experience = [
   },
   {
     role: 'System Engineer',
-    company: 'Infosys (Client: Johnson and Johnson)',
+    company: 'Infosys (Client: Johnson & Johnson (J&J))',
     location: 'Hyderabad',
     period: 'Jan 2022 – Feb 2023',
     bullets: [
